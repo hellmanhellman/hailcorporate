@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Hail Corporate",
+  "version": "1.0.1",
+
+  "description": "Makes clear which posts on reddit are probably advertisements by matching with how upvoted they are on r/hailcorporate.",
+  "icons": {
+    "128": "icon128.png",
+    "48": "icon48.png",
+    "16": "icon16.png"
+  },
+  "browser_action": {
+        "default_icon": "icon128.png"
+    },
+  "content_scripts": [
+        {
+            "matches": [
+                "*://*.reddit.com/*"
+            ],
+            "js": [
+                "jquery-2.2.0.min.js",
+                "jquery-color.min.js",
+                "content_script.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+    "tabs", "*://*.reddit.com/*", "activeTab"
+  ]
+}
