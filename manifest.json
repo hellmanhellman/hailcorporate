@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Hail Corporate",
-  "version": "1.0.1",
+  "version": "1.0.2",
 
   "description": "Makes clear which posts on reddit are probably advertisements by matching with how upvoted they are on r/hailcorporate.",
   "icons": {
@@ -26,6 +26,6 @@
         }
     ],
     "permissions": [
-    "tabs", "*://*.reddit.com/*", "activeTab"
+    "*://*.reddit.com/*", "activeTab"
   ]
 }
