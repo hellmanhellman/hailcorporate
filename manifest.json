@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
   "name": "Hail Corporate",
-  "version": "1.0.2",
+  "version": "1.0.3",
 
-  "description": "Makes clear which posts on reddit are probably advertisements by matching with how upvoted they are on r/hailcorporate.",
+  "description": "Enables marking posts and users on reddit if you think they are ads or shills and also marks posts that are on r/hailcorporate.",
   "icons": {
     "128": "icon128.png",
     "48": "icon48.png",
@@ -26,6 +26,6 @@
         }
     ],
     "permissions": [
-    "*://*.reddit.com/*", "activeTab"
+    "*://*.reddit.com/*", "activeTab","*://yogatime.herokuapp.com/*"
   ]
 }
