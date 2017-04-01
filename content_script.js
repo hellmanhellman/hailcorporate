@@ -83,7 +83,7 @@ function modifyPosts() {
 
   // Modify posts.
   $( ".thing" ).each(function(i, thing ) {
-
+            if(!$(thing).hasClass( "comment" )){
             // Grab the post comment section url and username...
             var url = $(thing).find(".entry ul.flat-list li.first a").attr('href');
             var username = $(thing).find(".entry .tagline a.author").text();
@@ -150,6 +150,7 @@ function modifyPosts() {
               username_line.after(" (<a style='color:#888' href='' class='suspectuser' value='"+username+"'>mark shill</a>) ");
             }
           }
+        }
 
 
   });

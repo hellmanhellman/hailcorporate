@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Hail Corporate",
-  "version": "1.0.3",
+  "version": "1.0.4",
 
   "description": "Enables marking posts and users on reddit if you think they are ads or shills and also marks posts that are on r/hailcorporate.",
   "icons": {
