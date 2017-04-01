@@ -58,7 +58,7 @@ $("body").on("click", ".unsuspectuser", function(e) {
 var hail_url_upvotes = {};
 var api_url_suspicion = {};
 var api_username_suspicion = {};
-
+var visited = {};
 // Returns gray from 220 to 140 based on upvotes on r/hailcorporate.
 // More upvotes -> More probable it's an ad -> blacker color.
 // Currently the blackest color is reached with 300 upvotes.
@@ -86,13 +86,18 @@ function modifyPosts() {
             if(!$(thing).hasClass( "comment" )){
             // Grab the post comment section url and username...
             var url = $(thing).find(".entry ul.flat-list li.first a").attr('href');
+
             var username = $(thing).find(".entry .tagline a.author").text();
 
             var title = $(thing).find(".entry p.title");
 
 
+
             if(defined(url)) {
 
+              if(visited[url])
+                return;
+              visited[url] = true;
               url = url.toLowerCase();
               var flat_list = $(thing).find(".entry ul.flat-list");
               if(defined(api_url_suspicion[url])){
@@ -121,6 +126,7 @@ function modifyPosts() {
                   // Prepend "(ad)" to the title and set the post background accordingly.
                   // (more upvoted on r/hailcorporate -> darker background)
                   title.prepend('<a href="'+hail_url_upvotes[url][1]+'">(ad) </a>');
+                  visited[url] = true;
                   $(thing).animate({backgroundColor:colorFromVotes(votes)},1000);
                   }
               }
@@ -151,6 +157,7 @@ function modifyPosts() {
             }
           }
         }
+
 
 
   });
